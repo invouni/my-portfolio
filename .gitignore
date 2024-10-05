@@ -129,9 +129,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#replit files
-.replit 
-replit.nix
-
-#bun files
-bun.lockb
