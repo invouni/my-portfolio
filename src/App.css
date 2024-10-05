@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      z-index: 50;
+    }
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    nav ul,
+    nav ul li,
+    nav ul li p,
+    nav {
+      z-index: 100;
+    }
+
+    section,
+    section p {
+      z-index: 0;
+    }
+
+    .slider {
+      position: relative;
+      transform-style: preserve-3d;
+      animation: spin 15s linear infinite;
+    }
+
+    .slider div {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      transform-origin: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      transform: rotateY(calc(var(--i) * 360 / 7 * 1deg)) translateZ(13rem);
+      transition: all ease 0.3s;
+    }
+
+    .slider div:hover {
+      scale: 1.5
+    }
+
+    @keyframes spin {
+      0% {
+        transform: perspective(1000px) rotateX(-24deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: perspective(1000px) rotateX(-24deg) rotateY(360deg);
+      }
+    }
+
+    @media (min-width: 640px) {
+      .slider div {
+        transform: rotateY(calc(var(--i) * 360 / 7 * 1deg)) translateZ(18rem);
+      }
+    }
+  
